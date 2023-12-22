@@ -1,0 +1,78 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+
+    <!-- <record model="ir.ui.view" id="test_mindbite.list">
+      <field name="name">test_mindbite list</field>
+      <field name="model">test_mindbite</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+          <field name="value"/>
+          <field name="value2"/>
+        </tree>
+      </field>
+    </record> -->
+
+ <!-- Define a view for your model -->
+        <record id="test_mindbite.list" model="ir.ui.view">
+            <field name="name">test_mindbite list</field>
+            <field name="model">test_mindbite</field>
+            <field name="arch" type="xml">
+                <!-- Display the items in a list view -->
+                <tree>
+                    <field name="name"/>
+                    <field name="activity"/>
+                    <field name="activity_type"/>
+                    <field name="participants"/>
+                    <field name="price"/>
+                    <field name="link"/>
+                    <field name="accessibility"/>
+                    <!-- Add more fields as needed -->
+                </tree>
+                </field>
+        </record>
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="test_mindbite.action_window">
+      <field name="name">test_mindbite window</field>
+      <field name="res_model">test_mindbite</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <!-- server action to the one above -->
+
+    <record model="ir.actions.server" id="test_mindbite.action_server">
+      <field name="name">test_mindbite server</field>
+      <field name="model_id" ref="model_test_mindbite"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+
+
+    <!-- Top menu item -->
+
+    <menuitem name="test_mindbite" id="test_mindbite.menu_root"/>
+
+    <!-- menu categories -->
+
+    <menuitem name="Menu 1" id="test_mindbite.menu_1" parent="test_mindbite.menu_root"/>
+    <menuitem name="Menu 2" id="test_mindbite.menu_2" parent="test_mindbite.menu_root"/>
+      
+
+    <!-- actions -->
+
+    <menuitem name="List" id="test_mindbite.menu_1_list" parent="test_mindbite.menu_1"
+              action="test_mindbite.action_window"/>
+    <menuitem name="Server to list" id="test_mindbite" parent="test_mindbite.menu_2"
+              action="test_mindbite.action_server"/>
+
+  </data>
+</odoo>
