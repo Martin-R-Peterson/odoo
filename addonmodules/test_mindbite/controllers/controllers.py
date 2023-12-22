@@ -20,9 +20,9 @@ class TestMindbite(http.Controller):
             'object': obj
         })
     
-    @http.route('/your_module/fetch_items', type='http', auth="user")
+    @http.route('/test_mindbite/fetch_items', type='http', auth="user")
     def fetch_items_from_api(self):
-        your_new_model = http.request.env['test_mindbite']
-        your_new_model.fetch_data_from_api()
+        test_mindbite = http.request.env['test_mindbite']
+        test_mindbite.fetch_data_from_api()
         return http.request.redirect('/web#model=test_mindbite&view_type=list')
 

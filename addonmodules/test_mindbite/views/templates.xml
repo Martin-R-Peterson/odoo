@@ -23,7 +23,7 @@
         <template id="fetchdata" xml:space="preserve">
     <t t-name="test_mindbite">
         <div>
-            <a t-att-href="'/your_module/fetch_items'">
+            <a t-att-href="'/test_mindbite/fetch_items'">
                 <button>Fetch 10 Items from API</button>
             </a>
         </div>

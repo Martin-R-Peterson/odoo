@@ -28,7 +28,6 @@
                     <field name="price"/>
                     <field name="link"/>
                     <field name="accessibility"/>
-                    <!-- Add more fields as needed -->
                 </tree>
                 </field>
         </record>

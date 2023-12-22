@@ -17,7 +17,7 @@ class test_mindbite(models.Model):
 
     @api.model
     def fetch_data_from_api(self):
-        response = requests.get('your_api_endpoint', params={'limit': 10})
+        response = requests.get('https://www.boredapi.com/api/activity', params={'limit': 10})
 
         if response.status_code == 200:
             data = response.json() 
