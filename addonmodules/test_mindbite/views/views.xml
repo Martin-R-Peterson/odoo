@@ -14,10 +14,33 @@
       </field>
     </record> -->
 
+    <!-- <record id="view_test_mindbite_list_inherit" model="ir.ui.view">
+    <field name="name">test_mindbite.list.inherit</field>
+    <field name="model">test_mindbite</field>
+    <field name="inherit_id" ref="base.view_tree"/>
+    <field name="arch" type="xml">
+        <xpath expr="//header" position="inside">
+            <button string="Fetch Data from API" type="object" name="fetch_data_from_api" class="oe_highlight"/>
+        </xpath>
+    </field>
+    </record> -->
+    <record id="test_mindbite_view_form" model="ir.ui.view">
+      <field name="name">test_mindbite.view.form</field>
+      <field name="model">test_mindbite</field>
+      <field name="arch" type="xml">
+        <form string="button">
+                        <button name="fetch_data_from_api" string="Print2" class="oe_highlight" type="object"/>
+        </form>
+      </field>
+    </record>
  <!-- Define a view for your model -->
-        <record id="test_mindbite.list" model="ir.ui.view">
-            <field name="name">test_mindbite list</field>
+        <record id="test_mindbite.fetch_items" model="ir.ui.view">
+            
+            <field name="name">test_mindbite.list</field>
             <field name="model">test_mindbite</field>
+            <field name="arch" type="xml">
+              <button name="fetch_data_from_api" string="Print2" class="oe_highlight" type="object"/>
+            </field>
             <field name="arch" type="xml">
                 <!-- Display the items in a list view -->
                 <tree>
@@ -62,7 +85,7 @@
 
     <!-- menu categories -->
 
-    <menuitem name="Menu 1" id="test_mindbite.menu_1" parent="test_mindbite.menu_root"/>
+    <menuitem name="Menu ett" id="test_mindbite.menu_1" parent="test_mindbite.menu_root"/>
     <menuitem name="Menu 2" id="test_mindbite.menu_2" parent="test_mindbite.menu_root"/>
       
 
@@ -70,6 +93,7 @@
 
     <menuitem name="List" id="test_mindbite.menu_1_list" parent="test_mindbite.menu_1"
               action="test_mindbite.action_window"/>
+   
     <menuitem name="Server to list" id="test_mindbite" parent="test_mindbite.menu_2"
               action="test_mindbite.action_server"/>
 

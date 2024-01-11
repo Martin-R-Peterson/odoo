@@ -1,0 +1,16 @@
+<odoo>
+  <data>
+    <record id="test_overrideaddon_view_form" model="ir.ui.view">
+      <field name="name">test_mindbite.view.form</field>
+      <field name="model">test_mindbite</field>
+      <field name="arch" type="xml">
+        <form string="button">
+                        <button name="override_test" string="Test Test" class="oe_highlight" type="object"/>
+        </form>
+      </field>
+    </record>
+
+    <!-- Top menu item -->
+     <menuitem name="test_override" id="test_overrideview.menu_root"/>
+  </data>
+</odoo>
