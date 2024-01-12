@@ -9,12 +9,14 @@
     'version': '0.1',
     'depends': ['web'],
     'data': [
-        'test_overrideview/views/views.xml',
+        'test_overrideaddon/views/views.xml',
     ],
     'assets': {
         'web.assets_backend': [
             'test_overrideview/static/src/**/*',
         ],
     },
-    'license': 'AGPL-3'
+    'license': 'AGPL-3',
+    'module_type': 'official',
+    'application': True,
 }

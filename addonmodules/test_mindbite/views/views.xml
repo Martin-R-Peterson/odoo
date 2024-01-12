@@ -14,34 +14,29 @@
       </field>
     </record> -->
 
-    <!-- <record id="view_test_mindbite_list_inherit" model="ir.ui.view">
+    <record id="view_test_mindbite_list_inherit" model="ir.ui.view">
     <field name="name">test_mindbite.list.inherit</field>
     <field name="model">test_mindbite</field>
-    <field name="inherit_id" ref="base.view_tree"/>
     <field name="arch" type="xml">
         <xpath expr="//header" position="inside">
-            <button string="Fetch Data from API" type="object" name="fetch_data_from_api" class="oe_highlight"/>
+            <button string="Fetch Data from API" type="object" name="call_api" class="oe_highlight"/>
         </xpath>
     </field>
-    </record> -->
-    <record id="test_mindbite_view_form" model="ir.ui.view">
+    </record>
+    <!-- <record id="test_mindbite_view_form" model="ir.ui.view">
       <field name="name">test_mindbite.view.form</field>
       <field name="model">test_mindbite</field>
       <field name="arch" type="xml">
-        <form string="button">
-                        <button name="fetch_data_from_api" string="Print2" class="oe_highlight" type="object"/>
-        </form>
+        <button string="Get 10 activities" type="object" class="oe_highlight" name="call_api"/>
       </field>
-    </record>
+    </record> -->
  <!-- Define a view for your model -->
         <record id="test_mindbite.fetch_items" model="ir.ui.view">
             
             <field name="name">test_mindbite.list</field>
             <field name="model">test_mindbite</field>
             <field name="arch" type="xml">
-              <button name="fetch_data_from_api" string="Print2" class="oe_highlight" type="object"/>
-            </field>
-            <field name="arch" type="xml">
+              
                 <!-- Display the items in a list view -->
                 <tree>
                     <field name="name"/>
@@ -52,7 +47,7 @@
                     <field name="link"/>
                     <field name="accessibility"/>
                 </tree>
-                </field>
+              </field>
         </record>
     <!-- actions opening views on models -->
 
@@ -96,6 +91,9 @@
    
     <menuitem name="Server to list" id="test_mindbite" parent="test_mindbite.menu_2"
               action="test_mindbite.action_server"/>
+    <menuitem name="get 10 activities" id="test_mindbite" parent="test_mindbite.menu_root"
+              action="view_test_mindbite_list_inherit"/>
+
 
   </data>
 </odoo>
