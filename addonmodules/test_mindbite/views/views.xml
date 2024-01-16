@@ -14,7 +14,7 @@
       </field>
     </record> -->
 
-    <record id="view_test_mindbite_list_inherit" model="ir.ui.view">
+    <!-- <record id="view_test_mindbite_list_inherit" model="ir.ui.view">
     <field name="name">test_mindbite.list.inherit</field>
     <field name="model">test_mindbite</field>
     <field name="arch" type="xml">
@@ -22,7 +22,7 @@
             <button string="Fetch Data from API" type="object" name="call_api" class="oe_highlight"/>
         </xpath>
     </field>
-    </record>
+    </record> -->
     <!-- <record id="test_mindbite_view_form" model="ir.ui.view">
       <field name="name">test_mindbite.view.form</field>
       <field name="model">test_mindbite</field>
@@ -46,6 +46,9 @@
                     <field name="price"/>
                     <field name="link"/>
                     <field name="accessibility"/>
+                    <xpath expr="//header" position="inside">
+                      <button type="object" name="create_todo" string="Create document"/>
+                    </xpath>
                 </tree>
               </field>
         </record>
@@ -91,8 +94,8 @@
    
     <menuitem name="Server to list" id="test_mindbite" parent="test_mindbite.menu_2"
               action="test_mindbite.action_server"/>
-    <menuitem name="get 10 activities" id="test_mindbite" parent="test_mindbite.menu_root"
-              action="view_test_mindbite_list_inherit"/>
+    <!-- <menuitem name="get 10 activities" id="test_mindbite" parent="test_mindbite.menu_root"
+              action="view_test_mindbite_list_inherit"/> -->
 
 
   </data>

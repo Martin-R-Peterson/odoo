@@ -1,4 +1,4 @@
-<templates id="template" xml:space="preserve">
+<!-- <templates id="template" xml:space="preserve">
     <t t-name="test_mindbite_tree">
         <div>
             <span t-field="item.name"/>
@@ -6,4 +6,4 @@
             <!-- Add other fields here -->
         </div>
     </t>
-</templates>
+</templates> -->
