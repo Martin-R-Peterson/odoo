@@ -23,11 +23,14 @@ class test_mindbite(models.Model):
         result = requests.env['ir.http'].dispatch_rpc('/test_mindbite/fetch_items', {})
         return True 
 
-    def create_todo(self):
+    def createtodo(self):
         todo_task_obj = self.env['todo.task']
         for activity in self:
             todo_task_obj.create({
                 'name': activity.name,
                 'description': f"Type: {activity.activity_type}\nParticipants: {activity.participants}\nPrice: {activity.price}\nLink: {activity.link}\nAccessibility: {activity.accessibility}",
             })
-        return True   
+    
+    def print(self):
+        print("HEJHEJHEJ")
+
