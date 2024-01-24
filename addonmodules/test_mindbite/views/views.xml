@@ -65,17 +65,17 @@
       <field name="binding_model_id" ref="model_test_mindbite"/>
       <field name="state">code</field>
       <field name="code">
-        action = self.createtodo()
+        action = model.createtodo()
       </field>
     </record>
-    <!-- <record id="ir.actions.server" model="test_mindbite.fetch">
+    <record id="ir.actions.server" model="test_mindbite.fetch">
     <field name="name">Hämta aktiviteter</field>
     <field name="type">ir.actions.server</field>
         <form action="/test_mindbite/fetch_items" method="post">
         
         <button type="submit" class="btn">Fetch Activites</button>
     </form>
-    </record> -->
+    </record>
 
     <!-- server action to the one above -->
 

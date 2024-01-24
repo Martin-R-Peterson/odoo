@@ -24,12 +24,15 @@ class test_mindbite(models.Model):
         return True 
 
     def createtodo(self):
-        todo_task_obj = self.env['todo.task']
-        for activity in self:
-            todo_task_obj.create({
-                'name': activity.name,
-                'description': f"Type: {activity.activity_type}\nParticipants: {activity.participants}\nPrice: {activity.price}\nLink: {activity.link}\nAccessibility: {activity.accessibility}",
-            })
+        todo_task_obj = self.env['project.task']
+        print("OutsideLoop#####")
+        print(todo_task_obj)
+        
+        print("inActivity")
+        todo_task_obj.create({
+            'name': self.name,
+            'description': "Type: {self.activity_type}\nParticipants: {self.participants}\nPrice: {self.price}\nLink: {self.link}\nAccessibility: {self.accessibility}",
+        })
     
     def print(self):
         print("HEJHEJHEJ")
